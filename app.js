@@ -2,6 +2,7 @@ const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controlls');
 const secBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
+const btn = document.getElementById('button');
 
 function PageTransitions(){
     //Button click active class
@@ -44,3 +45,24 @@ function PageTransitions(){
 }
 
 PageTransitions();
+
+
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_ubpycfm';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
