@@ -642,8 +642,22 @@ section{
             justify-content: flex-start;
 
         }
+
+        
+        
     }
 }
+.px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+.bg-opacity-50 {
+    --tw-bg-opacity: 0.5;
+}
+.mt-5 {
+    margin-top: 1.25rem;
+}
+
 
 /* Independent components*/
 .btn-con{
